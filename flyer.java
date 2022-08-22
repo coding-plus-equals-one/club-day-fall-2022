@@ -7,8 +7,7 @@ class Main {
             codingClubPitch(coding);
         } else {
             System.out.println("Join the coding club!");
-            System.out.println("Thurs and Fri in Room 752.");
-            System.exit(0);
+            System.out.println("Thurs and Fri after school in Room 752.");
         }
     }   
     public static void main(String[] args){

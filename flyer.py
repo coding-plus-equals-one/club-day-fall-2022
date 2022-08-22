@@ -7,7 +7,7 @@ def coding_club_pitch(coding):
         coding_club_pitch(coding)
     else:
         print("Join the coding club!")
-        print("Thurs and Fri in Room 752.")
+        print("Thurs and Fri after school in Room 752.")
 
 coding_club_pitch(coding)
 
