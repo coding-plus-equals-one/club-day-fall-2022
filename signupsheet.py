@@ -8,25 +8,23 @@ root = Tk()
 root.title("Sign-Up Sheet")
 root.geometry("350x475")
 
-num = 1
 qrcode = PhotoImage(file="qrcode.png")
 
 
 def values():
-    global num
+    file = open("signupsheet.csv", "r+")
+    num = len(file.readlines()) + 1  # Uses the current line # of the file
     name = c.get()
     email = e.get()
     discinfo = g.get()
-    info = str(num) + ". " + name + ", " + email + ", " + discinfo
+    info = str(num) + ", " + name + ", " + email + ", " + discinfo
     print(info)
-    file = open("signupsheet.txt", "a")
     file.write(info)
     file.write("\n")
     file.close()
     c.delete(0, END)
     e.delete(0, END)
     g.delete(0, END)
-    num += 1
 
 
 a = Label(root, text="Sign-Up Sheet")
@@ -39,7 +37,7 @@ d = Label(root, text="Personal Email:")
 d.grid(row=2, column=0)
 e = Entry(root)
 e.grid(row=2, column=1, columnspan=2)
-f = Label(root, text="Discord(optional):")
+f = Label(root, text="Discord (optional):")
 f.grid(row=3, column=0)
 g = Entry(root)
 g.grid(row=3, column=1, columnspan=2)
@@ -47,6 +45,6 @@ h = Button(root, text="Submit", command=values)
 h.grid(row=4, column=1)
 i = Label(root, image=qrcode)
 i.grid(row=5, column=0, columnspan=2)
-j = Label(root, text="Check out our website using the QRcode above!")
+j = Label(root, text="Check out our website using the QR code above!")
 j.grid(row=6, column=0, columnspan=2)
 root.mainloop()
